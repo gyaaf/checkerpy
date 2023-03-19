@@ -3,6 +3,7 @@
 
 Gyaf spotter is a League Of Legends name disponibility mass checker.
 
+![alt text](https://cdn.discordapp.com/attachments/653400369782587393/1086817402601349130/Screenshot_from_2023-03-18_22-03-12.png)
 
 ## Installation
 
