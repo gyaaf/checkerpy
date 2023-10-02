@@ -62,7 +62,7 @@ def printInd():
         print(texto, file=z)
 
 
-diasBan = -150
+diasBan = -200
 
 def modo1():
     if datanick == 0 and diasquefaltam == 0:
@@ -100,6 +100,8 @@ APIKEY = '' # Coloque sua API KEY aqui:
 
 def usercheck(username):
     while True:
+        if len(username) == 2:
+            username = username[0] + ' ' + username[1]
         req = requests.get(f'https://br1.api.riotgames.com/lol/summoner/v4/summoners/by-name/{username}?api_key={APIKEY}', timeout=300)
         if req.status_code != 429:
             break
@@ -131,11 +133,7 @@ with open("usernames.txt", encoding='utf-8') as f:
     for line in f:
         username = line.strip()
 
-        if len(username) < 3:
-            print(f'[red]{username} tem menos de 3 letras ( use espaço nesses casos ).')
-        elif len(username) > 16:
-            print(f'[red]{username} tem mais de 16 letras.')
-            continue
+
 
         dados = usercheck(username)
 
